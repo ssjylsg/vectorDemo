@@ -1,0 +1,698 @@
+{
+	"version": 8,
+	"name": "AMAP Demo",
+	"metadata": {
+		"mapbox:autocomposite": true,
+		"mapbox:type": "default",
+		"mapbox:groups": {}
+	},
+	"sources": {
+		"AMAP": {
+			"type": "vector",
+			"tiles": ["/Tiles/AMAP/{x}/{y}/{z}"],
+			"maxzoom": 18,
+			"minzoom": 3
+		},
+		"esri": {
+			"type": "vector",
+			"tiles": ["/Tiles/QRCODE/{x}/{y}/{z}.pbf"],
+			"maxzoom": 3,
+			"minzoom": 0
+		}
+	},
+	"sprite": "/resources/sprites/sprite",
+	"glyphs": "resources/fonts/{fontstack}/{range}.pbf",
+	"layers": [
+
+		{
+			"id": "background",
+			"type": "background",
+			"layout": {},
+			"paint": {
+				"background-color": {
+					"base": 1,
+					"stops": [
+						[11, "#FCF9F2"],
+						[13, "#FCF9F2"]
+					]
+				}
+			}
+		},
+
+
+
+
+
+
+
+
+
+
+
+
+
+		{
+			"id": "ZHIFUBAO",
+			"type": "fill",
+			"source": "esri",
+			"source-layer": "ZHIFUBAO",
+			"layout": {},
+			"paint": {
+				"fill-color": "#FF73DF"
+			}
+		},
+
+
+
+
+
+
+
+
+
+
+		{
+			"id": "regions:traffic:polygon_ok",
+			"type": "fill",
+			"source": "AMAP",
+			"source-layer": "regions:traffic:polygon",
+			"layout": {},
+			"paint": {
+				"fill-color": "#b9e2dc"
+			}
+		}, {
+			"id": "regions:sports:polygon_ok",
+			"type": "fill",
+			"source": "AMAP",
+			"source-layer": "regions:sports:polygon",
+			"layout": {},
+			"paint": {
+				"fill-color": "#c8e49d"
+			}
+		}, {
+			"id": "regions:scenicSpot:polygon_ok",
+			"type": "fill",
+			"source": "AMAP",
+			"source-layer": "regions:scenicSpot:polygon",
+			"layout": {},
+			"paint": {
+				"fill-color": "#c8e49d"
+			}
+		}, {
+			"id": "regions:public:polygon_ok",
+			"type": "fill",
+			"source": "AMAP",
+			"source-layer": "regions:public:polygon",
+			"layout": {},
+			"paint": {
+				"fill-color": "#e8e6e1"
+			}
+		}, {
+			"id": "regions:land:polygon_ok",
+			"type": "fill",
+			"source": "AMAP",
+			"source-layer": "regions:land:polygon",
+			"layout": {},
+			"paint": {
+				"fill-color": "#fcf9f2"
+			}
+		}, {
+			"id": "regions:health:polygon_ok",
+			"type": "fill",
+			"source": "AMAP",
+			"source-layer": "regions:health:polygon",
+			"layout": {},
+			"paint": {
+				"fill-color": "#ebd8de"
+			}
+		}, {
+			"id": "regions:edu:polygon_ok",
+			"type": "fill",
+			"source": "AMAP",
+			"source-layer": "regions:edu:polygon",
+			"layout": {},
+			"paint": {
+				"fill-color": "#d7e6ed"
+			}
+		}, {
+			"id": "regions:culture:polygon_ok",
+			"type": "fill",
+			"source": "AMAP",
+			"source-layer": "regions:culture:polygon",
+			"layout": {},
+			"paint": {
+				"fill-color": "#efe3cf"
+			}
+		}, {
+			"id": "regions:business:polygon_ok",
+			"type": "fill",
+			"source": "AMAP",
+			"source-layer": "regions:business:polygon",
+			"layout": {},
+			"paint": {
+				"fill-color": "#e9e0ed"
+			}
+		}, {
+			"id": "buildings:polygon_bad",
+			"type": "fill",
+			"source": "AMAP",
+			"source-layer": "buildings:polygon",
+			"layout": {},
+			"paint": {
+				"fill-color": "#f4f3ec",
+				"fill-opacity": 0.8
+			}
+		}, {
+			"id": "regions:green:polygon_ok",
+			"type": "fill",
+			"source": "AMAP",
+			"source-layer": "regions:green:polygon",
+			"layout": {},
+			"paint": {
+				"fill-color": "#c8e49d"
+			}
+		}, {
+			"id": "water:polygon_ok",
+			"type": "fill",
+			"source": "AMAP",
+			"source-layer": "water:polygon",
+			"layout": {},
+			"paint": {
+				"fill-color": "#a3ccff"
+			}
+		},
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+		{
+			"id": "borders:China:line_ok",
+			"type": "line",
+			"source": "AMAP",
+			"source-layer": "borders:China:line",
+			"layout": {
+				"line-cap": "round",
+				"line-join": "round"
+			},
+			"paint": {
+				"line-color": "#c76a79",
+				"line-width": 1
+			}
+		}, {
+			"id": "borders:foreign:line_ok",
+			"type": "line",
+			"source": "AMAP",
+			"source-layer": "borders:foreign:line",
+			"layout": {
+				"line-cap": "round",
+				"line-join": "round"
+			},
+			"paint": {
+				"line-color": "#b2b2b2",
+				"line-width": 1
+			}
+		}, {
+			"id": "borders:provincial:line_out",
+			"type": "line",
+			"source": "AMAP",
+			"source-layer": "borders:provincial:line",
+			"layout": {
+				"line-cap": "round",
+				"line-join": "round"
+			},
+			"paint": {
+				"line-color": "#fefefd",
+				"line-width": 4
+			}
+		}, {
+			"id": "borders:provincial:line_in",
+			"ref": "borders:provincial:line_out",
+			"paint": {
+				"line-color": "#9ea0a2",
+				"line-width": 2
+			}
+		}, {
+			"id": "roads:highSpeedRailway:line_ok",
+			"type": "line",
+			"source": "AMAP",
+			"source-layer": "roads:highSpeedRailway:line",
+			"layout": {
+				"line-cap": "round",
+				"line-join": "round"
+			},
+			"paint": {
+				"line-color": "#f7f5f1",
+				"line-width": 1
+			}
+		}, {
+			"id": "roads:highWay:line_out",
+			"type": "line",
+			"source": "AMAP",
+			"source-layer": "roads:highWay:line",
+			"layout": {
+				"line-cap": "round",
+				"line-join": "round"
+			},
+			"paint": {
+				"line-color": "#f68025",
+				"line-width": 5
+			}
+		}, {
+			"id": "roads:highWay:line_in",
+			"ref": "roads:highWay:line_out",
+			"paint": {
+				"line-color": "#ffa35c",
+				"line-width": 3,
+				"line-dasharray": [0.1, 15]
+			}
+		}, {
+			"id": "roads:levelFourRoad:line_ok",
+			"type": "line",
+			"source": "AMAP",
+			"source-layer": "roads:levelFourRoad:line",
+			"layout": {
+				"line-cap": "round",
+				"line-join": "round"
+			},
+			"paint": {
+				"line-color": "#ffffff",
+				"line-width": 3
+			}
+		}, {
+			"id": "roads:levelThreeRoad:line_out",
+			"type": "line",
+			"source": "AMAP",
+			"source-layer": "roads:levelThreeRoad:line",
+			"layout": {
+				"line-cap": "round",
+				"line-join": "round"
+			},
+			"paint": {
+				"line-color": "#ded8cd",
+				"line-width": 5
+			}
+		}, {
+			"id": "roads:levelThreeRoad:line_in",
+			"ref": "roads:levelThreeRoad:line_out",
+			"paint": {
+				"line-color": "#ffffff",
+				"line-width": 3
+			}
+		}, {
+			"id": "roads:nationalRoad:line_out",
+			"type": "line",
+			"source": "AMAP",
+			"source-layer": "roads:nationalRoad:line",
+			"layout": {
+				"line-cap": "round",
+				"line-join": "round"
+			},
+			"paint": {
+				"line-color": "#dfb265",
+				"line-width": 1
+			}
+		}, {
+			"id": "roads:nationalRoad:line_in",
+			"ref": "roads:nationalRoad:line_out",
+			"paint": {
+				"line-color": "#f8d291",
+				"line-width": 3
+			}
+		}, {
+			"id": "roads:other:line_ok",
+			"type": "line",
+			"source": "AMAP",
+			"source-layer": "roads:other:line",
+			"layout": {
+				"line-cap": "round",
+				"line-join": "round"
+			},
+			"paint": {
+				"line-color": "#5f8db3",
+				"line-width": 1
+			}
+		}, {
+			"id": "roads:provincialRoad:line_out",
+			"type": "line",
+			"source": "AMAP",
+			"source-layer": "roads:provincialRoad:line",
+			"layout": {
+				"line-cap": "round",
+				"line-join": "round"
+			},
+			"paint": {
+				"line-color": "#f2c841",
+				"line-width": 4
+			}
+		}, {
+			"id": "roads:provincialRoad:line_in",
+			"ref": "roads:provincialRoad:line_out",
+			"paint": {
+				"line-color": "#f6e3a3",
+				"line-width": 2
+			}
+		}, {
+			"id": "roads:railway:line_out",
+			"type": "line",
+			"source": "AMAP",
+			"source-layer": "roads:railway:line",
+			"layout": {
+				"line-cap": "round",
+				"line-join": "round"
+			},
+			"paint": {
+				"line-color": "#a6abae",
+				"line-width": 5
+			}
+		}, {
+			"id": "roads:railway:line_in",
+			"ref": "roads:railway:line_out",
+			"paint": {
+				"line-color": "#f7f5f1",
+				"line-width": 3,
+				"line-dasharray": [4, 4]
+			}
+		}, {
+			"id": "roads:ringRoad:line_out",
+			"type": "line",
+			"source": "AMAP",
+			"source-layer": "roads:ringRoad:line",
+			"layout": {
+				"line-cap": "round",
+				"line-join": "round"
+			},
+			"paint": {
+				"line-color": "#e1ad04",
+				"line-width": 2
+			}
+		}, {
+			"id": "roads:ringRoad:line_in",
+			"ref": "roads:ringRoad:line_out",
+			"paint": {
+				"line-color": "#f1cf5f",
+				"line-width": 5
+			}
+		}, {
+			"id": "roads:roadsBeingBuilt:line_ok",
+			"type": "line",
+			"source": "AMAP",
+			"source-layer": "roads:roadsBeingBuilt:line",
+			"layout": {
+				"line-cap": "round",
+				"line-join": "round"
+			},
+			"paint": {
+				"line-color": "#d2d2d2",
+				"line-width": 1
+			}
+		}, {
+			"id": "roads:secondaryRoad:line_out",
+			"type": "line",
+			"source": "AMAP",
+			"source-layer": "roads:secondaryRoad:line",
+			"layout": {
+				"line-cap": "round",
+				"line-join": "round"
+			},
+			"paint": {
+				"line-color": "#ded8cd",
+				"line-width": 5
+			}
+		}, {
+			"id": "roads:secondaryRoad:line_in",
+			"ref": "roads:secondaryRoad:line_out",
+			"paint": {
+				"line-color": "#ffffff",
+				"line-width": 2
+			}
+		}, {
+			"id": "roads:subway:line_out",
+			"type": "line",
+			"source": "AMAP",
+			"source-layer": "roads:subway:line",
+			"layout": {
+				"line-cap": "round",
+				"line-join": "round"
+			},
+			"paint": {
+				"line-color": "#ffffff",
+				"line-width": 4
+			}
+		}, {
+			"id": "roads:subway:line_in",
+			"ref": "roads:subway:line_out",
+			"paint": {
+				"line-color": "#db8240",
+				"line-width": 2
+			}
+		}, {
+			"id": "roads:subwayBeingBuilt:line_ok",
+			"type": "line",
+			"source": "AMAP",
+			"source-layer": "roads:subwayBeingBuilt:line",
+			"layout": {
+				"line-cap": "round",
+				"line-join": "round"
+			},
+			"paint": {
+				"line-color": "#7b8082",
+				"line-width": 1
+			}
+		}, {
+			"id": "water:line_ok",
+			"type": "line",
+			"source": "AMAP",
+			"source-layer": "water:line",
+			"layout": {
+				"line-cap": "round",
+				"line-join": "round"
+			},
+			"paint": {
+				"line-color": "#a3ccff",
+				"line-width": 1
+			}
+		},
+
+
+
+
+
+
+
+
+
+
+
+
+		{
+			"id": "labels:continent:point_ok",
+			"type": "symbol",
+			"source": "AMAP",
+			"source-layer": "labels:continent:point",
+			"layout": {
+				"text-field": "{label}",
+				"text-font": ["DIN Offc Pro Italic", "Arial Unicode MS Regular"],
+				"text-padding": 4,
+				"text-max-width": 7,
+				"text-size": 10
+			},
+			"paint": {
+				"text-color": "#000000",
+				"text-halo-color": "hsl(35, 8%, 85%)",
+				"text-halo-width": 0.5,
+				"text-halo-blur": 0
+			}
+		}, {
+			"id": "labels:country:point_ok",
+			"type": "symbol",
+			"source": "AMAP",
+			"source-layer": "labels:country:point",
+			"layout": {
+				"text-field": "{label}",
+				"text-font": ["DIN Offc Pro Italic", "Arial Unicode MS Regular"],
+				"text-padding": 4,
+				"text-max-width": 7,
+				"text-size": 10
+			},
+			"paint": {
+				"text-color": "#c76a79",
+				"text-halo-color": "hsl(35, 8%, 85%)",
+				"text-halo-width": 0.5,
+				"text-halo-blur": 0
+			}
+		}, {
+			"id": "labels:city:point_ok",
+			"type": "symbol",
+			"source": "AMAP",
+			"source-layer": "labels:city:point",
+			"layout": {
+				"text-field": "{label}",
+				"text-font": ["DIN Offc Pro Italic", "Arial Unicode MS Regular"],
+				"text-padding": 4,
+				"text-max-width": 7,
+				"text-size": 10
+			},
+			"paint": {
+				"text-color": "#6e6c6a",
+				"text-halo-color": "hsl(35, 8%, 85%)",
+				"text-halo-width": 0.5,
+				"text-halo-blur": 0
+			}
+		}, {
+			"id": "labels:pois:point_ok",
+			"type": "symbol",
+			"source": "AMAP",
+			"source-layer": "labels:pois:point",
+			"layout": {
+				"icon-image": "A{icon}",
+				"text-field": "{label}",
+				"text-font": ["DIN Offc Pro Italic", "Arial Unicode MS Regular"],
+				"text-padding": 4,
+				"text-offset": [0, 1.5],
+				"text-max-width": 7,
+				"text-size": 10
+			},
+			"paint": {
+				"text-color": "#6e6c6a",
+				"text-halo-color": "hsl(35, 8%, 85%)",
+				"text-halo-width": 0.5,
+				"text-halo-blur": 0
+			}
+		}, {
+			"id": "labels:aois:point_ok",
+			"type": "symbol",
+			"source": "AMAP",
+			"source-layer": "labels:aois:point",
+			"layout": {
+				"icon-image": "A{icon}",
+				"text-field": "{label}",
+				"text-font": ["DIN Offc Pro Italic", "Arial Unicode MS Regular"],
+				"text-padding": 4,
+				"text-offset": [0, 1.5],
+				"text-max-width": 7,
+				"text-size": 15
+			},
+			"paint": {
+				"text-color": "#629846",
+				"text-halo-color": "hsl(35, 8%, 85%)",
+				"text-halo-width": 0.5,
+				"text-halo-blur": 0
+			}
+		}, {
+			"id": "labels:town:point_ok",
+			"type": "symbol",
+			"source": "AMAP",
+			"source-layer": "labels:town:point",
+			"layout": {
+				"icon-image": "A{icon}",
+				"text-field": "{label}",
+				"text-font": ["DIN Offc Pro Italic", "Arial Unicode MS Regular"],
+				"text-padding": 4,
+				"text-offset": [0, 1.5],
+				"text-max-width": 7,
+				"text-size": 15
+			},
+			"paint": {
+				"text-color": "#6e6c6a",
+				"text-halo-color": "hsl(35, 8%, 85%)",
+				"text-halo-width": 0.5,
+				"text-halo-blur": 0
+			}
+		}, {
+			"id": "labels:district:point_ok",
+			"type": "symbol",
+			"source": "AMAP",
+			"source-layer": "labels:district:point",
+			"layout": {
+				"icon-image": "A{icon}",
+				"text-field": "{label}",
+				"text-font": ["DIN Offc Pro Italic", "Arial Unicode MS Regular"],
+				"text-padding": 4,
+				"text-offset": [0, 1.5],
+				"text-max-width": 7,
+				"text-size": 15
+			},
+			"paint": {
+				"text-color": "#ffffff",
+				"text-halo-color": "hsl(35, 8%, 85%)",
+				"text-halo-width": 0.5,
+				"text-halo-blur": 0
+			}
+		}, {
+			"id": "roads:secondaryRoad:point_ok",
+			"type": "symbol",
+			"source": "AMAP",
+			"source-layer": "roads:secondaryRoad:point",
+			"layout": {
+				"icon-image": "A{icon}",
+				"text-field": "{label}",
+				"text-font": ["DIN Offc Pro Italic", "Arial Unicode MS Regular"],
+				"text-padding": 4,
+				"text-max-width": 7,
+				"text-size": 15
+			},
+			"paint": {
+				"text-color": "#90816f",
+				"text-halo-color": "hsl(35, 8%, 85%)",
+				"text-halo-width": 0.5,
+				"text-halo-blur": 0
+			}
+		}, {
+			"id": "labels:village:point_ok",
+			"type": "symbol",
+			"source": "AMAP",
+			"source-layer": "labels:village:point",
+			"layout": {
+				"icon-image": "A{icon}",
+				"text-field": "{label}",
+				"text-font": ["DIN Offc Pro Italic", "Arial Unicode MS Regular"],
+				"text-padding": 4,
+				"text-offset": [0, 1.5],
+				"text-max-width": 7,
+				"text-size": 15
+			},
+			"paint": {
+				"text-color": "#979593",
+				"text-halo-color": "hsl(35, 8%, 85%)",
+				"text-halo-width": 0.5,
+				"text-halo-blur": 0
+			}
+		}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	],
+	"created": 0,
+	"modified": 0,
+	"owner": "dodo",
+	"id": "AMAP",
+	"draft": false,
+	"visibility": "public"
+}
